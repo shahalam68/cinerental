@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import SideBar from "./SideBar";
 import MovieList from "./cine/MovieList";
-import { MovieContext } from "./context/index.js";
+import { MovieContext } from "./context";
 
 export default function App() {
   const [cartData, setCartData] = useState([]);
