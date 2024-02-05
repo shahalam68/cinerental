@@ -27,6 +27,7 @@ export default function MovieCard({ movie }) {
       });
     } else {
       toast.error(
+        // eslint-disable-next-line react/prop-types
         `The movie ${movie.title} has been added to the cart already`,
         {
           position: "bottom-right",
