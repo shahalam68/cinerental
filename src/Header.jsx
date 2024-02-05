@@ -10,7 +10,7 @@ export default function Header() {
   const [showCart, setShowcart] = useState(false);
   const { darkMode, setDarkMode } = useContext(ThemeContext);
 
-  const { cartData } = useContext(MovieContext);
+  const { state } = useContext(MovieContext);
 
   const handleCartShow = () => {
     setShowcart(true);
@@ -56,9 +56,9 @@ export default function Header() {
               onClick={() => handleCartShow()}
             >
               <img src={ShoppingCart} width="24" height="24" alt="cart" />
-              {cartData.length > 0 && (
+              {state.cartData.length > 0 && (
                 <span className="rounded-full absolute top-[-12px] left-[28px] bg-[#12CF6F] text-white text-center p-[2px] w-[25px] h-[25px]">
-                  {cartData.length}
+                  {state.cartData.length}
                 </span>
               )}
             </a>
