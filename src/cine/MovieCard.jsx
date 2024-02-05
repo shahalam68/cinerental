@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { toast } from "react-toastify";
 import { MovieContext } from "../context";
 import { getImgUrl } from "../utils/cine-utility";
 import MovieDetailsModal from "./MovieDetailsModal";
@@ -21,8 +22,16 @@ export default function MovieCard({ movie }) {
           ...movie,
         },
       });
+      toast.success(`Added  ${movie.title} to Cart !`, {
+        position: "bottom-right",
+      });
     } else {
-      console.error(`The Movie ${movie.title} has been `);
+      toast.error(
+        `The movie ${movie.title} has been added to the cart already`,
+        {
+          position: "bottom-right",
+        }
+      );
     }
   };
   const handleModalClose = () => {
